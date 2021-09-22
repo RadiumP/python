@@ -8,7 +8,7 @@ for rule in root.iter('Rule'):
                 print(rule.attrib['enabled'])
                 rule.attrib['enabled'] = 'false'
                 print(rule.attrib['enabled'])
-root.write('test.xml')
+root.write('test.ppx', encoding='utf-8', xml_declaration=True)
 
-p = Path('test.xml')
-p.rename(p.with_suffix('.ppx'))
+# p = Path('test.xml')
+# p.rename(p.with_suffix('.ppx'))

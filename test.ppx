@@ -1,3 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
 <ProxifierProfile version="102" platform="Windows" product_id="0" product_minver="400">
 	<Options>
 		<Resolve>
@@ -21,7 +22,7 @@
 			<Targets>192.168.1.254</Targets>
 			<Name>Connect</Name>
 		</Rule>
-		<Rule enabled="true">
+		<Rule enabled="false">
 			<Action type="Block" />
 			<Name>Block</Name>
 		</Rule>
