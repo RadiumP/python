@@ -1,14 +1,17 @@
 import xml.etree.ElementTree as ET
 from pathlib import Path
-root = ET.parse('test.ppx')
-for rule in root.iter('Rule'):
+tree = ET.parse('test.ppx')
+for rule in tree.iter('Rule'):
     for child in rule:
         if(child.tag == 'Name'):
             if(child.text == 'Block'):
                 print(rule.attrib['enabled'])
                 rule.attrib['enabled'] = 'false'
                 print(rule.attrib['enabled'])
-root.write('test.ppx', encoding='utf-8', xml_declaration=True)
+
+with open('test.ppx', 'wb') as f:
+    f.write(b'<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n')
+    tree.write(f)
 
 # p = Path('test.xml')
 # p.rename(p.with_suffix('.ppx'))
