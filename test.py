@@ -6,6 +6,6 @@ for rule in root.iter('Rule'):
         if(child.tag == 'Name'):
             if(child.text == 'Block'):
                 print(rule.attrib['enabled'])
-                rule.attrib['enabled'] = 'false'
+                rule.attrib['enabled'] = 'true'
                 print(rule.attrib['enabled'])
 root.write('test.ppx')

@@ -21,7 +21,7 @@
 			<Targets>192.168.1.254</Targets>
 			<Name>Connect</Name>
 		</Rule>
-		<Rule enabled="false">
+		<Rule enabled="true">
 			<Action type="Block" />
 			<Name>Block</Name>
 		</Rule>
