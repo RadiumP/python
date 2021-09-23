@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ProxifierProfile version="102" platform="Windows" product_id="0" product_minver="400">
-	<Options>
-		<Resolve>
-			<AutoModeDetection enabled="true" />
-			<ViaProxy enabled="false" />
-			<ExclusionList OnlyFromListMode="false">%ComputerName%; localhost; *.local</ExclusionList>
-			<DnsUdpMode>0</DnsUdpMode>
-		</Resolve>
-		<Encryption mode="disabled" />
-		<ConnectionLoopDetection enabled="true" resolve="true" />
-		<ProcessOtherUsers enabled="false" />
-		<ProcessServices enabled="false" />
-		<HandleDirectConnections enabled="false" />
-		<HttpProxiesSupport enabled="false" />
-	</Options>
-	<ProxyList />
-	<ChainList />
-	<RuleList>
-		<Rule enabled="true">
-			<Action type="Direct" />
-			<Targets>192.168.1.254</Targets>
-			<Name>Connect</Name>
-		</Rule>
-		<Rule enabled="false">
-			<Action type="Block" />
-			<Name>Block</Name>
-		</Rule>
-		<Rule enabled="true">
-			<Action type="Direct" />
-			<Name>Default</Name>
-		</Rule>
-	</RuleList>
+<ProxifierProfile version="101" platform="Windows" product_id="0" product_minver="310">
+  <Options>
+    <Resolve>
+      <AutoModeDetection enabled="true" />
+      <ViaProxy enabled="false">
+        <TryLocalDnsFirst enabled="false" />
+      </ViaProxy>
+      <ExclusionList>%ComputerName%; localhost; *.local</ExclusionList>
+      <DnsUdpMode>0</DnsUdpMode>
+    </Resolve>
+    <Encryption mode="disabled" />
+    <HttpProxiesSupport enabled="false" />
+    <HandleDirectConnections enabled="false" />
+    <ConnectionLoopDetection enabled="true" />
+    <ProcessServices enabled="false" />
+    <ProcessOtherUsers enabled="false" />
+  </Options>
+  <ProxyList />
+  <ChainList />
+  <RuleList>
+    <Rule enabled="true">
+      <Name>Connect</Name>
+      <Targets>192.168.1.254</Targets>
+      <Action type="Direct" />
+    </Rule>
+    <Rule enabled="false">
+      <Name>Block</Name>
+      <Action type="Block" />
+    </Rule>
+    <Rule enabled="true">
+      <Name>Default</Name>
+      <Action type="Direct" />
+    </Rule>
+  </RuleList>
 </ProxifierProfile>
